@@ -1,4 +1,4 @@
-.PHONY: all help build run builddocker rundocker kill rm-image rm clean enter logs
+.PHONY: all help base fresh clone clean
 
 all: help
 
@@ -8,6 +8,8 @@ help:
 	@echo ""   1. make base       - build base docker containers
 
 base: clone jessie alpine
+
+fresh: clean base
 
 clone: GIT_HOME clonedirs
 
@@ -25,7 +27,13 @@ GIT_HOME:
 jessie:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME)/local-debian; make jessie
+	-@docker images -q local-jessie>local-jessie
 
 alpine:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME)/alpine-arm; make fresh
+	-@docker images -q alpine-arm>alpine-arm
+
+clean:
+	-rm alpine-arm
+	-rm local-jessie
