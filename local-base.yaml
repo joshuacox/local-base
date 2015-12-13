@@ -1,0 +1,4 @@
+- name: dockersupport
+  hosts: local-base
+  tasks:
+  - script: bootstrapbase.sh

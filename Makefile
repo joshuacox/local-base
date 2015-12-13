@@ -37,3 +37,6 @@ alpine:
 clean:
 	-rm alpine-arm
 	-rm local-jessie
+
+play:
+	ansible-playbook local-base.yaml
