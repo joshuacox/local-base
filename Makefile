@@ -23,7 +23,9 @@ GIT_HOME:
 	done ;
 
 jessie:
+	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME)/local-debian; make jessie
 
 alpine:
+	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME)/alpine-arm; make fresh
