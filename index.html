@@ -32,6 +32,30 @@
 <a id="local-base" class="anchor" href="#local-base" aria-hidden="true"><span class="octicon octicon-link"></span></a>local-base</h1>
 
 <p>Build base images for local docker</p>
+
+<pre><code>curl https://raw.githubusercontent.com/joshuacox/local-base/master/bootstrapbase.sh|bash
+</code></pre>
+
+<p>or you can build locally with</p>
+
+<pre><code>make fresh
+</code></pre>
+
+<p>alternatively you can add some lines to your /etc/ansible/hosts like this:</p>
+
+<pre><code>examplehost ansible_ssh_port=22 ansible_ssh_host=10.1.2.3 ansible_ssh_user=root
+examplehost1 ansible_ssh_port=22 ansible_ssh_host=10.1.2.4 ansible_ssh_user=root
+[local-base]
+examplehost
+examplehost1
+</code></pre>
+
+<p>and</p>
+
+<pre><code>make play
+</code></pre>
+
+<p>to install to those examplehosts</p>
       </section>
     </div>
 
