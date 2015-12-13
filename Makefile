@@ -15,6 +15,7 @@ clonedirs:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME);git clone https://github.com/joshuacox/alpine-arm.git
 	-cd $(GIT_HOME);git clone https://github.com/joshuacox/local-debian.git
+	-@date -I>clonedirs
 
 GIT_HOME:
 	@while [ -z "$$GIT_HOME" ]; do \
