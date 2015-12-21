@@ -37,7 +37,7 @@ alpine:
 
 registry:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
-	-cd $(GIT_HOME)/kubernetes-on-arm.git; ./images/build.sh kubernetesonarm/registry
+	-cd $(GIT_HOME)/kubernetes-on-arm; ./images/build.sh kubernetesonarm/registry
 
 clean:
 	-rm alpine-arm
