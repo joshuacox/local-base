@@ -3,7 +3,7 @@
 Build base images for local docker
 
 ```
-curl https://raw.githubusercontent.com/joshuacox/local-base/master/bootstrapbase.sh|bash
+curl https://raw.githubusercontent.com/joshuacox/local-base/master/bootstrapbase.sh |bash
 ```
 
 or you can build locally with
