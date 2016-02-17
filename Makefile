@@ -7,7 +7,7 @@ help:
 	@echo "-- Help Menu"
 	@echo ""   1. make base       - build base docker containers
 
-base: clone jessie alpine registry
+base: clone jessie
 
 fresh: clean base
 
