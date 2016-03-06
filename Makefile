@@ -7,7 +7,7 @@ help:
 	@echo "-- Help Menu"
 	@echo ""   1. make base       - build base docker containers
 
-base: clone jessie
+base: clone jessie stretch
 
 fresh: clean base
 
@@ -29,6 +29,11 @@ jessie:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
 	-cd $(GIT_HOME)/local-debian; make jessie
 	-@docker images -q local-jessie>local-jessie
+
+stretch:
+	$(eval GIT_HOME := $(shell cat GIT_HOME))
+	-cd $(GIT_HOME)/local-debian; make stretch
+	-@docker images -q local-stretch>local-stretch
 
 alpine:
 	$(eval GIT_HOME := $(shell cat GIT_HOME))
